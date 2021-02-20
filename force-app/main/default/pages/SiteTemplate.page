@@ -1,0 +1,39 @@
+<apex:page standardController="Account" extensions="AccountPage_CX" showHeader="true" lightningStylesheets="true">
+    <apex:tabPanel >
+        <apex:tab label="Account">
+            <apex:form >
+                <!-- Account Info -->
+                <apex:pageBlock title="Account Update">
+                    <apex:pageBlockSection title="Account Info">
+                        <apex:inputField value="{!account.Name}"/>
+                        <apex:inputField value="{!account.Phone}"/>
+                        <apex:inputField value="{!account.Industry}"/>
+                    </apex:pageBlockSection>
+                    
+                    <!-- Billing Address -->
+                    <apex:pageBlockSection title="Address">
+                        <apex:inputField value="{!account.BillingStreet}"/>
+                        <apex:inputField value="{!account.BillingCity}"/>
+                        <apex:inputField value="{!account.BillingState}"/>
+                        <apex:inputField value="{!account.BillingPostalCode}"/>
+                        <apex:inputField value="{!account.BillingCountry}"/>
+                    </apex:pageBlockSection>
+                    <apex:commandButton value="Save" action="{!save}"/>
+                </apex:pageBlock>
+                </apex:form>
+                <!-- This thing is helpful in debugging -->
+                <apex:pageMessages />
+        </apex:tab>
+
+        <!-- This stuff will most definiley be reformated, this is to get an idea of the layout -->
+        <apex:tab label="Packages">
+            <!-- //<apex:commandButton action="{!shippingRedirect}" value="See Upcoming Course Deliveries"  /> -->
+            <apex:form >
+                <apex:commandButton action="{!shippingRedirect}" value="See Shipping Packages"  />
+                <apex:commandButton value="See Past Deliveries"  />
+                <apex:commandButton value="Track a Package"  />
+            </apex:form>
+        </apex:tab>
+
+       </apex:tabPanel>
+</apex:page>
