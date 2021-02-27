@@ -1,39 +1,15 @@
 <apex:page standardController="Account" extensions="AccountPage_CX" showHeader="true" lightningStylesheets="true">
-    <apex:tabPanel >
-        <apex:tab label="Account">
-            <apex:form >
-                <!-- Account Info -->
-                <apex:pageBlock title="Account Update">
-                    <apex:pageBlockSection title="Account Info">
-                        <apex:inputField value="{!account.Name}"/>
-                        <apex:inputField value="{!account.Phone}"/>
-                        <apex:inputField value="{!account.Industry}"/>
-                    </apex:pageBlockSection>
-                    
-                    <!-- Billing Address -->
-                    <apex:pageBlockSection title="Address">
-                        <apex:inputField value="{!account.BillingStreet}"/>
-                        <apex:inputField value="{!account.BillingCity}"/>
-                        <apex:inputField value="{!account.BillingState}"/>
-                        <apex:inputField value="{!account.BillingPostalCode}"/>
-                        <apex:inputField value="{!account.BillingCountry}"/>
-                    </apex:pageBlockSection>
-                    <apex:commandButton value="Save" action="{!save}"/>
-                </apex:pageBlock>
-                </apex:form>
-                <!-- This thing is helpful in debugging -->
-                <apex:pageMessages />
-        </apex:tab>
-
+    <apex:stylesheet value="{!$Resource.SiteSamples}/SiteStyles.css"/>
         <!-- This stuff will most definiley be reformated, this is to get an idea of the layout -->
-        <apex:tab label="Packages">
+        <div style="text-align: center; margin-bottom: 29%" >
+            <div style="margin-bottom: 2em !important;">
+                <h1 class = "title">Welcome {!userFirstName}</h1>
+            </div>
             <!-- //<apex:commandButton action="{!shippingRedirect}" value="See Upcoming Course Deliveries"  /> -->
             <apex:form >
-                <apex:commandButton action="{!shippingRedirect}" value="See Shipping Packages"  />
-                <apex:commandButton value="See Past Deliveries"  />
-                <apex:commandButton value="Track a Package"  />
-            </apex:form>
-        </apex:tab>
-
-       </apex:tabPanel>
+                    <apex:commandButton styleClass="royalButton" action="{!accountEditRedirect}" value="Account Info"  />
+                    <apex:commandButton styleClass="royalButton" action="{!shippingRedirect}" value="Packages by Status"  />
+                    <apex:commandButton styleClass="royalButton" action="{!trackingRedirect}" value="Track a Package"  />
+            </apex:form>  
+        </div>
 </apex:page>

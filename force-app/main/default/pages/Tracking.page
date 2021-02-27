@@ -1,6 +1,25 @@
-<apex:page >
-<!-- Begin Default Content REMOVE THIS -->
-<h1>Congratulations</h1>
-This is your new Page
-<!-- End Default Content REMOVE THIS -->
+<apex:page controller="Tracking_CC" tabStyle="Contact" lightningStylesheets="true">
+    <apex:stylesheet value="{!$Resource.SiteSamples}/SiteStyles.css"/>
+    <div style="height: 57vh;">
+    <apex:form >
+        <div style="text-align:center">
+            <apex:pageBlock id="trackList">
+                <apex:inputText label="Track Package" value="{!searchText}"/>
+                <apex:commandButton styleClass="royalButton" value="Track Package" action="{!search}"/>
+            </apex:pageBlock>
+        </div>
+        <apex:pageBlock rendered="{!searched}">
+            <apex:pageMessages />
+            <apex:pageBlockTable value="{!mails}" var="m">
+                <apex:column value="{!m.Name}"/>
+                <apex:column value="{!m.Delivered__c}"/>
+                <apex:column value="{!m.route__r.name}"/>
+                <apex:column value="{!m.Inhabitant__r.name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</div>
+<apex:form >
+    <apex:commandButton styleClass="royalButton" action="{!siteTemplateRedirect}" value="Go Home"  />
+</apex:form>
 </apex:page>

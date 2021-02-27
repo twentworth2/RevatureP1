@@ -33,6 +33,7 @@
 
     <types>
         <members>*</members>
+        <members>Contact</members>
         <name>CustomObject</name>
     </types>
 
@@ -51,10 +52,34 @@
         <name>Flow</name>
     </types>
 
-    <types>
-        <members>Security</members>
-        <name>Settings</name>
+      <types>
+        <members>*</members>
+        <name>Network</name>
     </types>
+
+    <types>
+        <members>*</members>
+        <name>SiteDotCom</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+
+    <types>
+        <members>Admin</members>
+        <members>Royal Mail User</members>
+        <members>Driver</members>
+        <members>Mail Handler</members>
+        <name>Profile</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+
 
     <version>50.0</version>
 

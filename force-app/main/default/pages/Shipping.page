@@ -1,9 +1,91 @@
-<apex:page standardController="Account" extensions="AccountPage_CX" lightningStylesheets="true">
-<!-- Begin Default Content REMOVE THIS -->
-<h1>Shipping Page</h1>
-This is your new Page
+<apex:page controller="ShippingPageController" lightningStylesheets="true">
+    <apex:stylesheet value="{!$Resource.SiteSamples}/SiteStyles.css"/>
+<div style="height: 57vh;">
+<apex:form >   
+    <span style="font-size: 16px; font-weight: bold"> Filter By Status: </span>
+    <div style="margin-top: 10px">
+        <apex:selectList style="padding: 5px; font-size: 16px;" size="1" value="{!deliveryStatus}">
+            <apex:actionSupport event="onchange" action="{!getStatus}" reRender="mailList, buttons"/>
+            <apex:selectOption itemLabel="View All" itemValue="View All"></apex:selectOption>
+            <apex:selectOption itemLabel="At Carrier Facility" itemValue="At Carrier Facility"></apex:selectOption>
+            <apex:selectOption itemLabel="Out for Delivery" itemValue="Out for Delivery"></apex:selectOption>
+            <apex:selectOption itemLabel="Delivered" itemValue="Delivered"></apex:selectOption>
+            <apex:selectOption itemLabel="Missing" itemValue="Missing"></apex:selectOption>
+        </apex:selectList>
+    </div>
+    <br/>
+    <div style = "max-height: 40vh; overflow: auto;">
+    <apex:pageBlock title="Mail">
+            <apex:pageBlockTable id="mailList" var="mails" value="{!mail}">
+            <apex:column value="{!mails.Name}">
+                <apex:facet name="header">
+                    <apex:commandLink action="{!sortByName}" reRender="mailList">
+                        Name
+                    </apex:commandLink>
+                </apex:facet>
+            </apex:column>
+
+            <apex:column value="{!mails.Weight_Oz__c}">
+                <apex:facet name="header">
+                    <apex:commandLink action="{!sortByWeight}" reRender="mailList">
+                        Weight (in Oz)
+                    </apex:commandLink>
+                </apex:facet>
+            </apex:column>
+
+            <apex:column value="{!mails.Height_inches__c}">
+                <apex:facet name="header">
+                    <apex:commandLink action="{!sortByHeight}" reRender="mailList">
+                        Height (in inches)
+                    </apex:commandLink>
+                </apex:facet>
+            </apex:column>
+
+            <apex:column value="{!mails.Width_inches__c}">
+                <apex:facet name="header">
+                    <apex:commandLink action="{!sortByWidth}" reRender="mailList">
+                        Width (in inches)
+                    </apex:commandLink>
+                </apex:facet>
+            </apex:column>
+
+            <apex:column value="{!mails.Route__c}">
+                <apex:facet name="header">
+                    <apex:commandLink action="{!sortByRoute}" reRender="mailList">
+                        Route
+                    </apex:commandLink>
+                </apex:facet>
+            </apex:column>
+
+            <apex:column value="{!mails.Delivered__c}">
+                <apex:facet name="header">
+                    <apex:commandLink action="{!sortByStatus}" reRender="mailList">
+                        Status
+                    </apex:commandLink>
+                </apex:facet>
+            </apex:column>
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+</div>
+    <div style="position: relative; text-align: center;">
+        <apex:outputPanel id="buttons">
+            <apex:commandButton style="padding: 12px" value="|<" title="First" action="{!ssc.first}" disabled="{!NOT(ssc.HasPrevious)}" />
+            <apex:commandButton style="padding: 12px" value="<" title="Previous" action="{!ssc.previous}" disabled="{!NOT(ssc.HasPrevious)}" />
+            <apex:commandButton style="padding: 12px" value=">" title="Next" action="{!ssc.next}" disabled="{!NOT(ssc.HasNext)}" />
+            <apex:commandButton style="padding: 12px" value=">|" title="Last" action="{!ssc.last}" disabled="{!NOT(ssc.HasNext)}" />
+            <br/>
+            <apex:outputText >
+                    {!(ssc.pageNumber * ssc.pageSize) + 1 - ssc.pageSize}
+                    through 
+                    {!IF((ssc.pageNumber * ssc.pageSize) > ssc.resultSize, ssc.resultSize,(ssc.pageNumber * ssc.pageSize))} 
+                    of {!ssc.resultSize} records
+            </apex:outputText>
+        </apex:outputPanel>
+    </div>
+</apex:form> 
+</div>
 <apex:form >
-    <apex:commandButton action="{!siteTemplateRedirect}" value="Go Home"  />
+    <apex:commandButton styleClass="royalButton" action="{!siteTemplateRedirect}" value="Go Home"  />
 </apex:form>
-<!-- End Default Content REMOVE THIS -->
 </apex:page>

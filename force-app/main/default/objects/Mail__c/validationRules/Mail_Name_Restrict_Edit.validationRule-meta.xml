@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mail_Name_Restrict_Edit</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+(AND($Profile.Name = &quot;Driver&quot;, ISCHANGED(   Name  ))),
+(AND($Profile.Name = &quot;Mail Handler&quot;, ISCHANGED(   Name  )))
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Only Admins can edit this field</errorMessage>
+</ValidationRule>

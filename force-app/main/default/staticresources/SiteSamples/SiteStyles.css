@@ -14,8 +14,11 @@
 }
 
 .title {
-    font-size: larger;
+    font-size: xxx-large;
     font-weight: bold;
+    text-align:center !important;
+    text-shadow: 1px 1px rgb(0, 0, 0);
+    color:#888888 !important;
 }
 
 .poweredByImage {
@@ -25,4 +28,14 @@
 
 img {
     border: none;
+}
+
+.royalButton{
+    font-size: small !important;
+    background: #EF001B !important;
+    color:rgb(255, 255, 255) !important;
+    font-weight: bold !important;
+    text-shadow: 2px 2px rgb(0, 0, 0) !important;
+    padding: 1em !important;
+    margin: 1em !important;
 }

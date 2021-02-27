@@ -1,0 +1,32 @@
+<apex:page standardController="Account" extensions="AccountPage_CX" lightningStylesheets="true">
+<apex:stylesheet value="{!$Resource.SiteSamples}/SiteStyles.css"/>
+<!-- Begin Default Content REMOVE THIS -->
+<div style="height: 57vh;">
+    <apex:form >
+        <!-- Account Info -->
+        <apex:pageBlock title="Account Update">
+            <apex:pageBlockSection title="Account Info">
+                <apex:outputField value="{!account.Name}"/>
+                <apex:inputField value="{!account.Phone}"/>
+                <apex:inputField value="{!account.Industry}"/>
+            </apex:pageBlockSection>
+            
+            <!-- Billing Address -->
+            <apex:pageBlockSection title="Address">
+                <apex:inputField value="{!account.BillingStreet}"/>
+                <apex:inputField value="{!account.BillingCity}"/>
+                <apex:inputField value="{!account.BillingState}"/>
+                <apex:inputField value="{!account.BillingPostalCode}"/>
+                <apex:inputField value="{!account.BillingCountry}"/>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Save" action="{!quicksave}"/>
+        </apex:pageBlock>
+        </apex:form>
+        <!-- This thing is helpful in debugging -->
+        <apex:pageMessages />
+</div>
+<apex:form >
+    <apex:commandButton styleClass="royalButton" action="{!siteTemplateRedirect}" value="Go Home"  />
+</apex:form>
+<!-- End Default Content REMOVE THIS -->
+</apex:page>

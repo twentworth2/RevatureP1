@@ -12,12 +12,12 @@
 # LWC Jest coverage reports
 coverage/
 
-/force-app/main/default/aura/
-/force-app/main/default/components/
+# /force-app/main/default/aura/
+# /force-app/main/default/components/
 /scripts
-/force-app/main/default/flows/
-/force-app/main/default/objects
-/force-app/main/default/settings
+# /force-app/main/default/flows/
+# /force-app/main/default/objects
+# /force-app/main/default/settings
 
 # SOQL Query Results
 **/scripts/soql/query-results

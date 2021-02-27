@@ -1,0 +1,11 @@
+<apex:page controller="Feb22CodingChallenge_CC" tabStyle="Account" lightningStylesheets="true">
+    <apex:form >
+        <apex:pageBlock title="Account List and Sum of Expected Revenue">
+            <apex:pageMessages />
+            <apex:pageBlockTable var="c" value="{!accountList}" >
+                <apex:column title="Account Name" value="{!c.acct.Name}" />
+                <apex:column title="Sum of Expected Revenue" value="{!c.sumRev}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
