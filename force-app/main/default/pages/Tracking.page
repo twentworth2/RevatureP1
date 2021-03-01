@@ -8,13 +8,13 @@
                 <apex:commandButton styleClass="royalButton" value="Track Package" action="{!search}"/>
             </apex:pageBlock>
         </div>
+        <apex:pageBlock rendered="{!error}">
+            <apex:pageMessages/>
+        </apex:pageBlock>
         <apex:pageBlock rendered="{!searched}">
-            <apex:pageMessages />
             <apex:pageBlockTable value="{!mails}" var="m">
                 <apex:column value="{!m.Name}"/>
                 <apex:column value="{!m.Delivered__c}"/>
-                <apex:column value="{!m.route__r.name}"/>
-                <apex:column value="{!m.Inhabitant__r.name}"/>
             </apex:pageBlockTable>
         </apex:pageBlock>
     </apex:form>
