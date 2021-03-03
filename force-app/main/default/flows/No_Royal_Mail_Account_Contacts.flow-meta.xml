@@ -47,6 +47,12 @@
             <targetReference>Reassign_Account</targetReference>
         </connector>
         <inputAssignments>
+            <field>Customer_Potal_Account_Custom__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Name</field>
             <value>
                 <stringValue>{!$Record.LastName} Account</stringValue>

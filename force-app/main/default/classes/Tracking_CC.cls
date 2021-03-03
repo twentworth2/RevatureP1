@@ -1,4 +1,3 @@
-
 public class Tracking_CC {
 	
     public List<Mail__c> mails {get;set;}

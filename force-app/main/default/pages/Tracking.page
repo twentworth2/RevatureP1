@@ -9,7 +9,7 @@
             </apex:pageBlock>
         </div>
         <apex:pageBlock rendered="{!error}">
-            <apex:pageMessages/>
+            <apex:pageMessages />
         </apex:pageBlock>
         <apex:pageBlock rendered="{!searched}">
             <apex:pageBlockTable value="{!mails}" var="m">

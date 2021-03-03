@@ -34,6 +34,7 @@
     <types>
         <members>*</members>
         <members>Contact</members>
+        <members>Account</members>
         <name>CustomObject</name>
     </types>
 
@@ -50,6 +51,17 @@
     <types>
         <members>*</members>
         <name>Flow</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <members>Account</members>
+        <name>Workflow</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApprovalProcess</name>
     </types>
 
       <types>
@@ -80,6 +92,22 @@
         <name>CustomTab</name>
     </types>
 
+        <types>
+        <members>*</members>
+        <name>Dashboard</name>
+    </types>
+
+    <types>
+        <members>Discount_Request_Responses</members>
+        <members>Discount_Request_Responses/Discount_Approved</members>
+        <members>Discount_Request_Responses/Discount_Rejected</members>
+        <name>EmailTemplate</name>
+    </types>
+    
+    <types>
+        <members>*</members>
+        <name>Report</name>
+    </types>
 
     <version>50.0</version>
 
