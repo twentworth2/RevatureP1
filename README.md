@@ -22,8 +22,8 @@ We were tasked with creating an Experience Cloud as an external facing website f
 * Add automation to the account approval process when a tier is upgraded
 
 ## Getting Started
-* git clone https://https://github.com/twentworth2/RevatureP1
-* Create an new org to delpoy to.
+* clone the repository with the command: git clone https://https://github.com/twentworth2/RevatureP1
+* Create an new org to deploy to.
 * Enable Experiences in the Setup Menu.
 * Create a new site and name it whatever you like.
 * Navigate to the manifest folder from the repository and deployt the package.xml file.
