@@ -22,8 +22,6 @@ We were tasked with creating an Experience Cloud as an external facing website f
 * Add automation to the account approval process when a tier is upgraded
 
 ## Getting Started
-
-(include git clone command)
 git clone https://https://github.com/twentworth2/RevatureP1
 
 (include all environment setup steps)
