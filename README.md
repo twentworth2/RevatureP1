@@ -24,15 +24,13 @@ We were tasked with creating an Experience Cloud as an external facing website f
 ## Getting Started
 
 (include git clone command)
+git clone https://https://github.com/twentworth2/RevatureP1
+
 (include all environment setup steps)
-> Be sure to include BOTH Windows and Unix command  
-> Be sure to mention if the commands only work on a specific platform (eg. AWS, GCP)
-- All the `code` required to get started
-- Images of what it should look like
-
-## Usage
-
-> Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+Create an new org to delpoy to.
+Enable Experiences in the Setup Menu.
+Create a new site and name it whatever you like.
+Navigate to the manifest folder from the repository and deployt the package.xml file.
 
 ## Contributors
 * Tristan Wentworth
@@ -41,4 +39,4 @@ We were tasked with creating an Experience Cloud as an external facing website f
 * Ranveer Singh
 
 ## License
-This project uses the following license: [<license_name>](<link>).
+This project uses the following license: [Acceptable Use and External-Facing Services Policy](https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/policies/ExternalFacing_Services_Policy.pdf).
